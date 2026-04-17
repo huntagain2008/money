@@ -1,0 +1,84 @@
+.sidebar {
+  width: 200px;
+  background: var(--card-bg);
+  border-right: 1px solid var(--border);
+  padding: 1rem 0;
+  min-height: calc(100vh - 73px);
+  flex-shrink: 0;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  padding: 0 0.75rem;
+}
+
+.tab {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 8px;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  text-align: left;
+  transition: all 0.2s;
+}
+
+.tab:hover {
+  background: var(--border);
+  color: var(--text);
+}
+
+.tab.active {
+  background: var(--primary);
+  color: white;
+}
+
+.mobileNav {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    display: none;
+  }
+
+  .mobileNav {
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: var(--card-bg);
+    border-top: 1px solid var(--border);
+    padding: 0.5rem 0;
+    z-index: 100;
+  }
+
+  .mobileTab {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.5rem 1rem;
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 0.75rem;
+    transition: all 0.2s;
+  }
+
+  .mobileTab:hover,
+  .mobileTab.active {
+    color: var(--primary);
+  }
+
+  .mobileTab.active svg {
+    transform: scale(1.1);
+  }
+}

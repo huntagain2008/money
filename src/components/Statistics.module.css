@@ -1,0 +1,179 @@
+.container {
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.periodToggle {
+  display: flex;
+  background: var(--border);
+  border-radius: 8px;
+  padding: 4px;
+}
+
+.periodBtn {
+  padding: 0.5rem 1rem;
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+}
+
+.periodBtn:hover {
+  color: var(--text);
+}
+
+.periodBtn.active {
+  background: var(--card-bg);
+  color: var(--primary);
+  box-shadow: 0 1px 3px var(--shadow);
+}
+
+.summaryCards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  transition: box-shadow 0.2s;
+}
+
+.card:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.cardIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  flex-shrink: 0;
+}
+
+.card.income .cardIcon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--income);
+}
+
+.card.expense .cardIcon {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--expense);
+}
+
+.card.positive .cardIcon {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--income);
+}
+
+.card.negative .cardIcon {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--expense);
+}
+
+.cardContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.cardLabel {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.cardValue {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.card.income .cardValue,
+.card.positive .cardValue {
+  color: var(--income);
+}
+
+.card.expense .cardValue,
+.card.negative .cardValue {
+  color: var(--expense);
+}
+
+.charts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 1.5rem;
+}
+
+.chartCard {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+
+.chartCard h3 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.chartContainer {
+  height: 280px;
+  position: relative;
+}
+
+.noData {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .header h2 {
+    font-size: 1.25rem;
+  }
+
+  .summaryCards {
+    grid-template-columns: 1fr;
+  }
+
+  .charts {
+    grid-template-columns: 1fr;
+  }
+
+  .chartContainer {
+    height: 240px;
+  }
+}
